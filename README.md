@@ -1,17 +1,45 @@
-# play-scala-forms-example
+# The Email Formatter
 
-This example shows form processing and form helper handling under Play 2.8.x.
+<p align="center">
+  <img src="./public/images/logo-main.png" height="200" width="300" />
+</p>
+
+<div align="center">
+    <img src="./public/images/play-logo.png" height="50" width="100" />
+    <img src="./public/images/scala-logo.png" height="50" width="120" />
+</div>
+
+## Overview
+
+<strong>The Email Formatter.</strong>
+
+Receives a text and formats it according to the characters limit per line.
+
+The project was build on Play Framework and developed using Scala programming language.
 
 ## How to run
+### Please prefer to run this project in a Docker container:
+#### 1. Clone this repo from github
+    git clone https://github.com/gustavogmail/EmailFormatter.git
+#### 2. In the project root folder:
+    docker build -t email-formatter:v1 .
+    docker run -p 9000:9000 email-formatter:v1
+#### 3. Open the google chrome browser on:
+    http://localhost:9000
 
-Start the Play app:
+### Running locally
+#### Make sure you have:
+<ul>
+    <li><a href="https://docs.scala-lang.org/getting-started/index.html">Scala</a> installed</li>
+    <li><a href="https://www.oracle.com/java/technologies/downloads/#jdk18-windows">JDK</a> installed</li>
+    <li><a href="https://www.scala-sbt.org/download.html">sbt</a> installed</li>
+</ul>
 
-```bash
-sbt run
-```
+#### 1. Clone this repo from github
+    git clone https://github.com/gustavogmail/EmailFormatter.git
+#### 2. Add sbt\bin directory to your System Environment path variable
 
-And open [http://localhost:9000/](http://localhost:9000/)
-
-## Credits
-
-Originally written by Chris Birchall and the Guardian Team: <https://github.com/cb372/play-forms-tutorial>.  Much thanks, especially for the [article](https://www.theguardian.com/info/developer-blog/2015/dec/30/how-to-add-a-form-to-a-play-application).
+#### 3. (In the project's root folder) run all the unit test scenarios:
+    sbt run
+#### 4. Open the google chrome browser on:
+    http://localhost:9000
