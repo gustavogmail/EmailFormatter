@@ -1,0 +1,33 @@
+@(form: Form[EmailForm.Data], postUrl: Call)(implicit request: MessagesRequestHeader)
+
+@main("Email Formatter") {
+    @* Global errors are not tied to any particular form field *@
+    @if(form.hasGlobalErrors) {
+        @form.globalErrors.map { error: FormError =>
+            <div>
+                @error.key: @error.message
+            </div>
+        }
+    }
+    <br>
+    @helper.form(postUrl) {
+        @helper.CSRF.formField
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-12">
+                            @helper.inputText(form("Limit"))
+                        </div>
+                        <div class="col-12">
+                            @helper.textarea(form("Text"))
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-block btn-secondary">Format email</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3"></div>
+            </div>
+    }
+}

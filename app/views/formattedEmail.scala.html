@@ -1,0 +1,26 @@
+@(formattedMessage: String, originalText: String)(implicit request: MessagesRequestHeader)
+
+@main("Email Formatter") {
+
+    <div class="alert alert-secondary" role="alert">
+        @request.flash.data.map{ case (name, value) =>
+            <h4 class="alert-heading">@value</h4>
+        }
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-5">
+            <div class="alert alert-warning" role="alert">
+                <h3>Original Text</h3>
+                <span>@originalText</span>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="alert alert-success" role="alert">
+                <h3>Formatted text</h3>
+                <span style="white-space: pre-line">@formattedMessage</span>
+            </div>
+        </div>
+        <div class="col-1"></div>
+    </div>
+}
